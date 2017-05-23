@@ -1,0 +1,116 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 600px) {
+
+
+#hide_arrow, .search, .contact_name, .time, .control{
+    display: none;
+}
+#show_arrow{
+    display: block;
+    margin-left: 0;
+}
+.contacts{
+    width: 10%;
+}
+.chat, .chat_items{
+    width: 90%;
+}
+
+.contact_items{
+        width: 87px;
+        margin-left: 9px;
+}
+.my_msg{
+    margin-left: 8%;
+}
+.chat_item{
+    margin-right: 8%;
+}
+.write_msg{
+    width: 85%;
+}
+
+/* hide-show arrows */
+
+
+input[id = "show"]:checked ~ .chat{
+    width: 0%;    
+}
+input[id = "show"]:checked ~ .contacts,
+input[id = "show"]:checked ~ .contacts .contact_items,
+input[id = "show"]:checked ~ .contacts .contacts_header{
+        width: 100%;
+}
+input[id = "show"]:checked ~ .contacts .contact_items .contact_item{
+    flex-direction: row;
+    margin-left: 0;
+}
+input[id = "show"]:checked ~ .contacts .contacts_header .search,
+input[id = "show"]:checked ~ .contacts .contacts_header .control,
+input[id = "show"]:checked ~ .contacts .contacts_header #hide_arrow{
+    opacity: 1;
+    display: block;
+}
+input[id = "show"]:checked ~ .contacts .contact_items .contact_name,
+input[id = "show"]:checked ~ .contacts .contact_items .time{
+    display: block;
+}
+input[id = "show"]:checked ~ .contacts .contacts_header #show_arrow{
+    display: none;
+}
+input[id = "hide"]:checked ~ .contacts .contacts_header #show_arrow{
+    margin-left: 0;
+}
+
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+    
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 601px) {
+#hide_arrow, .search, .contact_name, .time{
+    display: inline-block !important;
+}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
