@@ -89,7 +89,7 @@ class UserInfo extends React.Component {
         }
         fetch(`API_CONFIG.USERS/${this.props.login.login}`, myInit)
 
-            .then(fetch('API_CONFIG.USERS')
+            .then(fetch(API_CONFIG.USERS)
                 .then(response => response.json())
                 .then(user => {
                     localStorage.setItem('login-user', JSON.stringify(user.filter(u => u.login === this.props.login.login)[0]));

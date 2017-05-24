@@ -16,7 +16,7 @@ class ChatInfo extends React.Component {
     }
 
     componentWillMount() {
-        fetch('API_CONFIG.USERS')
+        fetch(API_CONFIG.USERS)
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: this.props.selectedChat.users })

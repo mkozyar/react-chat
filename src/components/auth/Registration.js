@@ -18,7 +18,7 @@ export default class Registration extends React.Component {
     }
 
     componentDidMount() {
-        fetch('API_CONFIG.USERS')
+        fetch(API_CONFIG.USERS)
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: users })
@@ -129,7 +129,7 @@ export default class Registration extends React.Component {
                             avatar: this.state.avatar
                         })
                     }
-                    fetch('API_CONFIG.REGISTER', myInit)
+                    fetch(API_CONFIG.REGISTER, myInit)
                         .then(() => {
                             console.log('Resistration OK!');
 

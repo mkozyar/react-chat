@@ -17,7 +17,7 @@ class ChatList extends React.Component {
 
 
     componentDidMount() {
-        fetch('http://localhost:3012/chats')
+        fetch(API_CONFIG.CHATS)
             .then(response => response.json())
             .then(chats => {
                 this.setState({ chats: this.ChatFilterByUser(this.props.login.login, chats) })
@@ -80,7 +80,7 @@ class ChatList extends React.Component {
                             <div className={(chat === this.props.selectedChat) ? "contact_item active" : "contact_item"} onClick={this.isSelected.bind(this, chat)} key={chat._id}>
                                 <div className="avatar">
                                     <img src={chat.avatar} alt="" />
-                                    <span>2</span>
+                                    <span className="hide">2</span>
                                 </div>
                                 <div className={this.props.hideChats ? "contact_name" : " hide"}>
                                     <div className="name">

@@ -18,7 +18,7 @@ import {API_CONFIG} from '../../../API.config';
 
 
 componentWillUpdate() {
-    fetch('API_CONFIG.MESSAGES')
+    fetch(API_CONFIG.MESSAGES)
             .then(response => response.json())
             .then(messages => {
                 this.setState({ messages: messages.filter(msg => msg.chatId === this.props.selectedChat.name) })

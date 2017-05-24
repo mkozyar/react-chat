@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { connect } from 'react-redux';
-import {API_CONFIG} from '../../API.config';
+import { API_CONFIG } from '../../API.config';
 
 class Login extends React.Component {
 
@@ -64,14 +64,14 @@ class Login extends React.Component {
     }
 
     onChangeLogin(e) {
-        this.setState({ login: e.target.value })
+        this.setState({ login: e.target.value.toLowerCase() })
     }
     onChangePassword(e) {
         this.setState({ password: e.target.value })
     }
     onSubmit(e) {
         e.preventDefault();
-      
+
         if (this.validateLogin(this.state.users, { login: this.state.login, password: this.state.password })) {
             let myHeaders = new Headers();
             myHeaders.set('Content-Type', 'application/json');
@@ -82,14 +82,14 @@ class Login extends React.Component {
                 mode: 'cors',
                 body: JSON.stringify({ login: this.state.login, password: this.state.password })
             }
-            fetch('API_CONFIG.LOGIN', myInit)
+            fetch(API_CONFIG.LOGIN, myInit)
                 .then((res) => res.json())
                 .then((data) => {
                     this.initSocket(data.token);
                     this.isLogin(data.user);
                 })
         } else this.setState({ wrong: true })
-        
+
     }
 
     validateLogin(arr, obj) {

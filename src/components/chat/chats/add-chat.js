@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {API_CONFIG} from '../../../API.config';
 
 class AddChat extends React.Component {
 
@@ -19,7 +20,7 @@ class AddChat extends React.Component {
     }
 
     componentDidMount() {
-        fetch('API_CONFIG.USERS')
+        fetch(API_CONFIG.USERS)
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: users })
@@ -101,7 +102,7 @@ class AddChat extends React.Component {
                 avatar: 'http://www.volynpost.com/img/modules/news/e/1c/fced9d71d3a27fb3bf5751597e4451ce/cb-cv2px3xu5qo.jpg',
             })
         }
-        fetch('API_CONFIG.CHATS', myInit)
+        fetch(API_CONFIG.CHATS, myInit)
             .then(() => {
                 console.log('Resistration OK!');
 
