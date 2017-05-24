@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { connect } from 'react-redux';
+import {API_CONFIG} from '../../API.config';
 
 class Login extends React.Component {
 
@@ -15,7 +16,7 @@ class Login extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3012/users')
+        fetch('API_CONFIG.USERS')
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: users })
@@ -81,7 +82,7 @@ class Login extends React.Component {
                 mode: 'cors',
                 body: JSON.stringify({ login: this.state.login, password: this.state.password })
             }
-            fetch('http://localhost:3012/login', myInit)
+            fetch('API_CONFIG.LOGIN', myInit)
                 .then((res) => res.json())
                 .then((data) => {
                     this.initSocket(data.token);

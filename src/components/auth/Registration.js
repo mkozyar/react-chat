@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react';
+import {API_CONFIG} from '../../API.config';
 
 export default class Registration extends React.Component {
     constructor(props) {
@@ -17,7 +18,7 @@ export default class Registration extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:3012/users')
+        fetch('API_CONFIG.USERS')
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: users })
@@ -128,7 +129,7 @@ export default class Registration extends React.Component {
                             avatar: this.state.avatar
                         })
                     }
-                    fetch('http://localhost:3012/registration', myInit)
+                    fetch('API_CONFIG.REGISTER', myInit)
                         .then(() => {
                             console.log('Resistration OK!');
 

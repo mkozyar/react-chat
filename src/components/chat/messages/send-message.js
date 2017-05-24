@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {API_CONFIG} from '../../../API.config';
 
 class SendMessage extends React.Component {
 
@@ -38,7 +39,7 @@ class SendMessage extends React.Component {
             })
         }
         if(this.state.text !== '' && this.props.selectedChat.name){
-            fetch(`http://localhost:3012/chats/${this.props.selectedChat.name}`, myInit)
+            fetch(`API_CONFIG.CHATS/${this.props.selectedChat.name}`, myInit)
             .then(() => {
                 console.log('Sending OK!');
                 

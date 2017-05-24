@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import {API_CONFIG} from '../../../API.config';
 
 class ChatInfo extends React.Component {
 
@@ -15,7 +16,7 @@ class ChatInfo extends React.Component {
     }
 
     componentWillMount() {
-        fetch('http://localhost:3012/users')
+        fetch('API_CONFIG.USERS')
             .then(response => response.json())
             .then(users => {
                 this.setState({ users: this.props.selectedChat.users })

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import sha1 from 'sha1';
 import superagent from 'superagent';
 import Dropzone from 'react-dropzone';
+import {API_CONFIG} from '../../../API.config';
 
 class UserInfo extends React.Component {
 
@@ -86,9 +87,9 @@ class UserInfo extends React.Component {
                 description: this.state.description
             })
         }
-        fetch(`http://localhost:3012/users/${this.props.login.login}`, myInit)
+        fetch(`API_CONFIG.USERS/${this.props.login.login}`, myInit)
 
-            .then(fetch('http://localhost:3012/users')
+            .then(fetch('API_CONFIG.USERS')
                 .then(response => response.json())
                 .then(user => {
                     localStorage.setItem('login-user', JSON.stringify(user.filter(u => u.login === this.props.login.login)[0]));

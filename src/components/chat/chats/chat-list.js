@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import {API_CONFIG} from '../../../API.config';
 
 class ChatList extends React.Component {
 
@@ -58,7 +59,7 @@ class ChatList extends React.Component {
                 id: this.props.selectedChat._id
             })
         }
-        fetch(`http://localhost:3012/chats/${this.props.selectedChat._id}`, myInit)
+        fetch(`API_CONFIG.CHATS/${this.props.selectedChat._id}`, myInit)
             .then(() => {
                 console.log('Deleting OK!');
             }
